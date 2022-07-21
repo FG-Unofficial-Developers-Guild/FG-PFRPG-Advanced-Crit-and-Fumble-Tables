@@ -16,7 +16,7 @@
 		</ruleset>
 	</properties>
 
-	<announcement text="https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble\nAutomatic Crit and Fumble Tables v1.0:\nThis extension automates use of Pathfinder's crit and fumble tables." font="emotefont" />
+	<announcement text="https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble\nAutomatic Crit and Fumble Tables v1.0-hotfix.1:\nThis extension automates use of Pathfinder's crit and fumble tables." font="emotefont" />
 
 	<base>
 		<!-- Scripts -->
