@@ -2,6 +2,7 @@
 
 # Automatic Crit and Fumble Tables
 This extension automates use of Pathfinder's crit and fumble tables.
+It requires use of my [Critical and Fumble Decks](https://github.com/FG-Unofficial-Developers-Guild/FG-PFRPG-Critical-and-Fumble-Deck) module (or another module with the same table names).
 
 # Compatibility and Instructions
 This extension has been tested with [FantasyGrounds Unity](https://www.fantasygrounds.com/home/FantasyGroundsUnity.php) 4.2.2 (2022-06-07).
