@@ -54,10 +54,10 @@ local function onPostAttackResolve_new(_, _, rRoll)
 	-- HANDLE FUMBLE/CRIT HOUSE RULES
 	local sOptionHRFC = OptionsManager.getOption("HRFC");
 	if rRoll.sResult == "fumble" and ((sOptionHRFC == "both") or (sOptionHRFC == "fumble")) then
-		Debug.chat(AutoPFCritFumbleOOB.notifyApplyHRFC('Fumble - ' .. attackType(rRoll)));
+		AutoPFCritFumbleOOB.notifyApplyHRFC('Fumble - ' .. attackType(rRoll));
 	end
 	if rRoll.sResult == "crit" and ((sOptionHRFC == "both") or (sOptionHRFC == "criticalhit")) then
-		Debug.chat(AutoPFCritFumbleOOB.notifyApplyHRFC('Critical - ' .. StringManager.titleCase(damageType(rRoll))));
+		AutoPFCritFumbleOOB.notifyApplyHRFC('Critical - ' .. StringManager.titleCase(damageType(rRoll)));
 	end
 end
 
