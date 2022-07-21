@@ -38,7 +38,7 @@ local function attackType(rRoll)
 	end
 end
 
--- Determine attack type
+-- Determine damage type
 local function damageType(rRoll)
 	local sWeapon = getWeaponName(rRoll.sDesc);
 	if DataCommon.naturaldmgtypes[sWeapon:lower()] then
