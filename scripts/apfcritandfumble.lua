@@ -45,6 +45,8 @@ local function damageType(rRoll)
 		return DataCommon.naturaldmgtypes[sWeapon:lower()]:gsub(',.*', '');
 	elseif DataCommon.weapondmgtypes[sWeapon:lower()] then
 		return DataCommon.weapondmgtypes[sWeapon:lower()]:gsub(',.*', '');
+	elseif kelSpell(rRoll) or advEffectsSpell(rRoll) then
+		return "Magic";
 	else
 		return 'bludgeoning'
 	end
