@@ -21,7 +21,7 @@ local function kelSpell(rRoll)
 end
 
 -- Check if Advanced Effects is loaded and whether the attack has a Weapon attached
-local function advEffectsSpell(rSource, rRoll)
+local function advEffectsSpell(rSource)
 	return AdvancedEffects and not rSource.nodeWeapon
 end
 
@@ -32,7 +32,7 @@ local function attackType(rSource, rRoll)
 			return "Natural";
 		end
 	end
-	if kelSpell(rRoll) or advEffectsSpell(rSource, rRoll) then
+	if kelSpell(rRoll) or advEffectsSpell(rSource) then
 		return "Magic";
 	elseif string.match(rRoll.sDesc, "%[ATTACK.*%((%w+)%)%]") == "R" then
 		return "Ranged";
