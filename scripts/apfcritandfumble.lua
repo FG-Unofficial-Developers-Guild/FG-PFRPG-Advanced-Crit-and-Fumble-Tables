@@ -64,6 +64,8 @@ local function damageType(rSource, rRoll)
 end
 
 local function onPostAttackResolve_new(rSource, _, rRoll)
+	if not (rRoll and rSource) then return; end -- need rRoll to continue
+
 	-- HANDLE FUMBLE/CRIT HOUSE RULES
 	local sOptionHRFC = OptionsManager.getOption("HRFC");
 	if rRoll.sResult == "fumble" and ((sOptionHRFC == "both") or (sOptionHRFC == "fumble")) then
