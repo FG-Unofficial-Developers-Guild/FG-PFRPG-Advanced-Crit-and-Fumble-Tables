@@ -4,11 +4,6 @@
 
 OOB_MSGTYPE_APPLYHRFC = "applyhrfc";
 
--- luacheck: globals handleApplyHRFC notifyApplyHRFC
-function handleApplyHRFC(msgOOB)
-	TableManager.processTableRoll("", msgOOB.sTable);
-end
-
 function notifyApplyHRFC(sTable)
 	local msgOOB = {};
 	msgOOB.type = OOB_MSGTYPE_APPLYHRFC;
@@ -16,6 +11,11 @@ function notifyApplyHRFC(sTable)
 	msgOOB.sTable = sTable;
 
 	Comm.deliverOOBMessage(msgOOB, "");
+end
+
+-- luacheck: globals notifyApplyHRFC
+local function handleApplyHRFC(msgOOB)
+	TableManager.processTableRoll("", msgOOB.sTable);
 end
 
 function onInit()
