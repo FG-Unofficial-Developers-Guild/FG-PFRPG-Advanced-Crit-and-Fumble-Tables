@@ -22,7 +22,7 @@ end
 
 -- Check if Advanced Effects is loaded and whether the attack has a Weapon attached
 local function advEffectsSpell(rSource)
-	return AdvancedEffects and not rSource.nodeWeapon
+	return AdvancedEffects and not (rSource.nodeItem or rSource.nodeWeapon)
 end
 
 -- Determine attack type
