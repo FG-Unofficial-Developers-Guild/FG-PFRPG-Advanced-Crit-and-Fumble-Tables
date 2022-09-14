@@ -1,6 +1,7 @@
 --
 -- Please see the LICENSE.md file included with this distribution for attribution and copyright information.
 --
+-- luacheck: globals notifyApplyHRFC
 
 OOB_MSGTYPE_APPLYHRFC = "applyhrfc";
 
@@ -13,7 +14,6 @@ function notifyApplyHRFC(sTable)
 	Comm.deliverOOBMessage(msgOOB, "");
 end
 
--- luacheck: globals notifyApplyHRFC
 local function handleApplyHRFC(msgOOB)
 	TableManager.processTableRoll("", msgOOB.sTable);
 end
