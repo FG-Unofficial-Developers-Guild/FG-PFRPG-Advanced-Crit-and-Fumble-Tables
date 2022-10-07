@@ -4,10 +4,10 @@
 
 <root version="3.0" release="5">
 	<properties>
-		<name>Feature: Auto Crit and Fumble</name>
-		<version>1.1</version>
+		<name>Feature: Advanced Crit/Fumble</name>
+		<version>1.2</version>
 		<author>bmos (Wil Thieme)</author>
-		<description>This extension automates use of Pathfinder's crit and fumble tables.</description>
+		<description>This extension automates use of Pathfinder's crit and fumble tables based on attack/damage type.</description>
 		<ruleset>
 			<name>3.5E</name>
 		</ruleset>
@@ -16,7 +16,7 @@
 		</ruleset>
 	</properties>
 
-	<announcement text="https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble\nAutomatic Crit and Fumble Tables v1.1:\nThis extension automates use of Pathfinder's crit and fumble tables." font="emotefont" />
+	<announcement text="https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble\nAdvanced Crit and Fumble Tables v1.2:\nThis extension automates use of Pathfinder's crit and fumble tables." font="emotefont" />
 
 	<base>
 		<!-- Scripts -->
