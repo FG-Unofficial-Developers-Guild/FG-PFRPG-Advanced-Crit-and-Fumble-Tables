@@ -3,21 +3,17 @@
 --
 -- luacheck: globals notifyApplyHRFC
 
-OOB_MSGTYPE_APPLYHRFC = "applyhrfc";
+OOB_MSGTYPE_APPLYHRFC = 'applyhrfc'
 
 function notifyApplyHRFC(sTable)
-	local msgOOB = {};
-	msgOOB.type = OOB_MSGTYPE_APPLYHRFC;
+	local msgOOB = {}
+	msgOOB.type = OOB_MSGTYPE_APPLYHRFC
 
-	msgOOB.sTable = sTable;
+	msgOOB.sTable = sTable
 
-	Comm.deliverOOBMessage(msgOOB, "");
+	Comm.deliverOOBMessage(msgOOB, '')
 end
 
-local function handleApplyHRFC(msgOOB)
-	TableManager.processTableRoll("", msgOOB.sTable);
-end
+local function handleApplyHRFC(msgOOB) TableManager.processTableRoll('', msgOOB.sTable) end
 
-function onInit()
-	OOBManager.registerOOBMsgHandler(OOB_MSGTYPE_APPLYHRFC, handleApplyHRFC);
-end
+function onInit() OOBManager.registerOOBMsgHandler(OOB_MSGTYPE_APPLYHRFC, handleApplyHRFC) end
