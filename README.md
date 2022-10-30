@@ -8,6 +8,6 @@ It requires use of my [Critical and Fumble Decks](https://github.com/FG-Unoffici
 Criticals with an unknown damage type will default to bludgeoning (as you can always use things as bludgeons).
 
 # Compatibility and Instructions
-This extension has been tested with [FantasyGrounds Unity](https://www.fantasygrounds.com/home/FantasyGroundsUnity.php) 4.2.2 (2022-06-07).
+This extension has been tested with [FantasyGrounds Unity](https://www.fantasygrounds.com/home/FantasyGroundsUnity.php) 4.3.0 (2022-10-20).
 
 This extension works with the 3.5E and PFRPG rulesets.
