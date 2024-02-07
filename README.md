@@ -1,4 +1,4 @@
-[![Build FG-Usable File](https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble/actions/workflows/create-ext.yml/badge.svg)](https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble/actions/workflows/create-ext.yml) [![Run Luacheck on Latest Release](https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble/actions/workflows/luacheck.yml/badge.svg)](https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble/actions/workflows/luacheck.yml)
+[![Build FG-Usable File](https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble/actions/workflows/release.yml/badge.svg)](https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble/actions/workflows/release.yml) [![Run Luacheck on Latest Release](https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble/actions/workflows/luacheck.yml/badge.svg)](https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble/actions/workflows/luacheck.yml)
 
 # Advanced Crit and Fumble Tables
 This extension automates use of Pathfinder's various crit and fumble tables based on attack type (for fumbles) and damage type (for crits).
