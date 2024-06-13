@@ -66,7 +66,7 @@ local function damageType(rSource, rRoll)
 end
 
 local onPostAttackResolve_old
-local function onPostAttackResolve_new(rSource, _, rRoll, ...)
+local function onPostAttackResolve_new(rSource, rTarget, rRoll, rMessage, ...)
 	if not (rRoll and rSource) then
 		return
 	end -- need rRoll to continue
@@ -82,7 +82,7 @@ local function onPostAttackResolve_new(rSource, _, rRoll, ...)
 		AutoPFCritFumbleOOB.notifyApplyHRFC('Critical - ' .. StringManager.titleCase(sDamageType))
 	end
 
-	onPostAttackResolve_old(rSource, _, rRoll, ...)
+	onPostAttackResolve_old(rSource, rTarget, rRoll, rMessage, ...)
 end
 
 local function emptyFunction()
