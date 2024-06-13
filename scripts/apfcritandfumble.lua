@@ -18,13 +18,13 @@ local function getWeaponName(s)
 end
 
 -- Check for Extended Automation and whether the attack is tagged as a spell or spell-like ability
-local function kelSpell(rRoll)
+local function isSpellKel(rRoll)
 	return rRoll.tags and (rRoll.tags:match('spell') or rRoll.tags:match('spelllike'))
 end
 
 -- Check if Advanced Effects is loaded and whether the attack has a Weapon attached
-local function advEffectsSpell(rSource)
-	return AdvancedEffects and not (rSource.nodeItem or rSource.nodeWeapon)
+local function isSpellAE(rSource)
+	return AdvancedEffects and not (rSource.sType == 'npc' or rSource.nodeItem or rSource.nodeWeapon)
 end
 
 -- Determine attack type
@@ -34,7 +34,7 @@ local function attackType(rSource, rRoll)
 			return 'Natural'
 		end
 	end
-	if kelSpell(rRoll) or advEffectsSpell(rSource) then
+	if isSpellKel(rRoll) or isSpellAE(rSource) then
 		return 'Magic'
 	elseif string.match(rRoll.sDesc, '%[ATTACK.*%((%w+)%)%]') == 'R' then
 		return 'Ranged'
@@ -58,7 +58,7 @@ local function damageType(rSource, rRoll)
 			end
 		end
 	end
-	if kelSpell(rRoll) or advEffectsSpell(rSource, rRoll) then
+	if isSpellKel(rRoll) or isSpellAE(rSource, rRoll) then
 		return 'Magic'
 	else
 		return 'bludgeoning'
