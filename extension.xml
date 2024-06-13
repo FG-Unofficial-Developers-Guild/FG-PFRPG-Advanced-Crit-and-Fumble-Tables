@@ -5,7 +5,7 @@
 <root version="3.0" release="5">
 	<properties>
 		<name>Feature: Advanced Crit/Fumble</name>
-		<version>1.2</version>
+		<version>1.3</version>
 		<author>bmos (Wil Thieme)</author>
 		<description>This extension automates use of Pathfinder's crit and fumble tables based on attack/damage type.</description>
 		<ruleset>
@@ -16,7 +16,7 @@
 		</ruleset>
 	</properties>
 
-	<announcement text="https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble\nAdvanced Crit and Fumble Tables v1.2:\nThis extension automates use of Pathfinder's crit and fumble tables." font="emotefont" icon="module_loaded" />
+	<announcement text="https://github.com/bmos/FG-PFRPG-Auto-Crit-and-Fumble\nAdvanced Crit and Fumble Tables v1.3:\nThis extension automates use of Pathfinder's crit and fumble tables." font="emotefont" icon="module_loaded" />
 
 	<base>
 		<!-- Scripts -->
