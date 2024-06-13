@@ -65,7 +65,8 @@ local function damageType(rSource, rRoll)
 	end
 end
 
-local function onPostAttackResolve_new(rSource, _, rRoll)
+local onPostAttackResolve_old
+local function onPostAttackResolve_new(rSource, _, rRoll, ...)
 	if not (rRoll and rSource) then
 		return
 	end -- need rRoll to continue
@@ -78,9 +79,18 @@ local function onPostAttackResolve_new(rSource, _, rRoll)
 	if rRoll.sResult == 'crit' and ((sOptionHRFC == 'both') or (sOptionHRFC == 'criticalhit')) then
 		AutoPFCritFumbleOOB.notifyApplyHRFC('Critical - ' .. StringManager.titleCase(damageType(rSource, rRoll)))
 	end
+
+	onPostAttackResolve_old(rSource, _, rRoll, ...)
+end
+
+local function emptyFunction()
+	-- Blaaaaah
 end
 
 -- Function Overrides
 function onInit()
+	ActionAttack.notifyApplyHRFC = emptyFunction
+
+	onPostAttackResolve_old = ActionAttack.onPostAttackResolve
 	ActionAttack.onPostAttackResolve = onPostAttackResolve_new
 end
