@@ -7,7 +7,9 @@ local function getWeaponName(s)
 	local sWeaponName = s:gsub('%[ATTACK %(%u%)%]', '')
 	sWeaponName = sWeaponName:gsub('%[ATTACK #%d+ %(%u%)%]', '')
 	sWeaponName = sWeaponName:gsub('%[%u+%]', '')
-	if sWeaponName:match('%[USING ') then sWeaponName = sWeaponName:match('%[USING (.-)%]') end
+	if sWeaponName:match('%[USING ') then
+		sWeaponName = sWeaponName:match('%[USING (.-)%]')
+	end
 	sWeaponName = sWeaponName:gsub('%[.+%]', '')
 	sWeaponName = sWeaponName:gsub(' %(vs%. .+%)', '')
 	sWeaponName = StringManager.trim(sWeaponName)
@@ -16,15 +18,21 @@ local function getWeaponName(s)
 end
 
 -- Check for Extended Automation and whether the attack is tagged as a spell or spell-like ability
-local function kelSpell(rRoll) return rRoll.tags and (rRoll.tags:match('spell') or rRoll.tags:match('spelllike')) end
+local function kelSpell(rRoll)
+	return rRoll.tags and (rRoll.tags:match('spell') or rRoll.tags:match('spelllike'))
+end
 
 -- Check if Advanced Effects is loaded and whether the attack has a Weapon attached
-local function advEffectsSpell(rSource) return AdvancedEffects and not (rSource.nodeItem or rSource.nodeWeapon) end
+local function advEffectsSpell(rSource)
+	return AdvancedEffects and not (rSource.nodeItem or rSource.nodeWeapon)
+end
 
 -- Determine attack type
 local function attackType(rSource, rRoll)
 	for kDmgType, _ in pairs(DataCommon.naturaldmgtypes) do
-		if string.find(getWeaponName(rRoll.sDesc):lower(), kDmgType) then return 'Natural' end
+		if string.find(getWeaponName(rRoll.sDesc):lower(), kDmgType) then
+			return 'Natural'
+		end
 	end
 	if kelSpell(rRoll) or advEffectsSpell(rSource) then
 		return 'Magic'
@@ -58,7 +66,9 @@ local function damageType(rSource, rRoll)
 end
 
 local function onPostAttackResolve_new(rSource, _, rRoll)
-	if not (rRoll and rSource) then return end -- need rRoll to continue
+	if not (rRoll and rSource) then
+		return
+	end -- need rRoll to continue
 
 	-- HANDLE FUMBLE/CRIT HOUSE RULES
 	local sOptionHRFC = OptionsManager.getOption('HRFC')
@@ -71,4 +81,6 @@ local function onPostAttackResolve_new(rSource, _, rRoll)
 end
 
 -- Function Overrides
-function onInit() ActionAttack.onPostAttackResolve = onPostAttackResolve_new end
+function onInit()
+	ActionAttack.onPostAttackResolve = onPostAttackResolve_new
+end

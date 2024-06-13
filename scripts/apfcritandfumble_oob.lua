@@ -14,6 +14,10 @@ function notifyApplyHRFC(sTable)
 	Comm.deliverOOBMessage(msgOOB, '')
 end
 
-local function handleApplyHRFC(msgOOB) TableManager.processTableRoll('', msgOOB.sTable) end
+local function handleApplyHRFC(msgOOB)
+	TableManager.processTableRoll('', msgOOB.sTable)
+end
 
-function onInit() OOBManager.registerOOBMsgHandler(OOB_MSGTYPE_APPLYHRFC, handleApplyHRFC) end
+function onInit()
+	OOBManager.registerOOBMsgHandler(OOB_MSGTYPE_APPLYHRFC, handleApplyHRFC)
+end
